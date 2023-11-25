@@ -5,29 +5,117 @@ import "./index.css";
 function BookList() {
   return (
     <section className="book-list">
-      <Book />
+      <Book
+        Title="The Silent Patient"
+        Author="Alex Michaelides"
+        Genre="Psychological Thriller"
+        Price="25.00"
+        Country="United States"
+        img={img5}
+      />
+      <Book
+        Title="Educated"
+        Author="Tara Westover"
+        Genre="Memoir"
+        Price="18.99"
+        Country="United States"
+        img={img3}
+      />
+      <Book
+        Title="Sapiens: A Brief History of Humankind"
+        Author="Yuval Noah Harari"
+        Genre="Non-Fiction"
+        Price="19.99"
+        Country="Israel"
+        img={img9}
+      />
+      <Book
+        Title="Dune"
+        Author="Frank Herbert"
+        Genre="Science Fiction"
+        Price="15.50"
+        Country="United States"
+        img={img8}
+      />
+      <Book
+        Title="To Kill a Mockingbird"
+        Author="Harper Lee"
+        Genre="Fiction"
+        Price="14.99"
+        Country="United States"
+        img={img7}
+      />
+      <Book
+        Title="To Kill a Mockingbird"
+        Author="Harper Lee"
+        Genre="Fiction"
+        Price="12.99"
+        Country="United States"
+        img={img6}
+      />
+      <Book
+        Title="Dune"
+        Author="Frank Herbert"
+        Genre="Science Fiction"
+        Price="18.50"
+        Country="United States"
+        img={img2}
+      />
+      <Book
+        Title="Educated"
+        Author="Tara Westover"
+        Genre="Memoir"
+        Price="14.95"
+        Country="United States"
+        img={img5}
+      />
+      <Book
+        Title="The Da Vinci Code"
+        Author="Dan Brown"
+        Genre="Mystery/Thriller"
+        Price="10.99"
+        Country="United States"
+        img={img4}
+      />
+      <Book
+        Title="Sapiens: A Brief History of Humankind"
+        Author="Yuval Noah Harari"
+        Genre="Non-Fiction"
+        Price="20.00"
+        Country="United Kingdom"
+        img={img3}
+      />
+      <Book
+        Title="The Great Gatsby"
+        Author="F. Scott Fitzgerald"
+        Genre="Fiction"
+        Price="9.99"
+        Country="United States"
+        img={img}
+      />
     </section>
   );
 }
-const Book = () => {
-  const Country = "Canada";
+const Book = (props) => {
   return (
     <article className="book">
-      <Image></Image>
-      <Title />
-      <Author />
-      <h5>{Country.toLowerCase()}</h5>
+      <img src={props.img} alt="" width={250} height={300} />
+      <h2>{props.Title}</h2>({props.Genre})<h4>{props.Author}</h4>
+      <h5>{props.Country.toLowerCase()}</h5>
+      <p>{props.Price} $</p>
     </article>
   );
 };
 
-const Image = () => <img src="img/book.jpg" alt="" width={200} height={300} />;
-const Title = () => <h2>Milk and Honey</h2>;
-const Author = () => (
-  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-    Rupi Kaur
-  </h4>
-);
+const img = "img/book.jpg";
+const img2 = "img/book2.jpg";
+const img3 = "img/book3.jpg";
+const img4 = "img/book4.jpg";
+const img5 = "img/book5.jpg";
+const img6 = "img/book6.jpg";
+const img7 = "img/book7.jpg";
+const img8 = "img/book8.jpg";
+const img9 = "img/book9.jpg";
 
 ReactDom.render(<BookList />, document.getElementById("root"));
 
