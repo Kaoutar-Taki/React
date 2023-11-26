@@ -103,6 +103,7 @@ const books = [
     img: "img/book.jpg",
   },
 ];
+
 function BookList() {
   return (
     <section className="book-list">
@@ -112,14 +113,24 @@ function BookList() {
     </section>
   );
 }
+
 const Book = (props) => {
   const { img, Title, Genre, Author, Country, Price } = props;
+  const clickHandler = () => {
+    console.log("clickHandler");
+  };
+  const mouseOverHandler = () => {
+    console.log("mouseOverHandler");
+  };
   return (
-    <article className="book">
-      <img src={img} alt="" width={250} height={300} />
+    <article className="book" onMouseOver={mouseOverHandler}>
+      <img src={img} alt="book" width={250} height={300} />
       <h2>{Title}</h2>({Genre})<h4>{Author}</h4>
       <h5>{Country.toLowerCase()}</h5>
       <p>{Price} $</p>
+      <button type="button" onClick={clickHandler}>
+        Add to Cart
+      </button>
     </article>
   );
 };
