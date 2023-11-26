@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import { data } from "./books";
 import Book from "./Book";
@@ -14,4 +14,6 @@ function BookList() {
   );
 }
 
-ReactDom.render(<BookList />, document.getElementById("root"));
+const root = document.getElementById("root");
+const reactRoot = createRoot(root);
+reactRoot.render(<BookList />);
