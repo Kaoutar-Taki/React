@@ -4,12 +4,17 @@ import React from "react";
 // import Setup from "./tutorial/1-useState/setup/3-useState-array";
 // import Setup from "./tutorial/1-useState/setup/4-useState-object";
 // import Setup from "./tutorial/1-useState/setup/5-useState-counter";
-import Setup from "./tutorial/2-useEffect/setup/1-useEffect-basics";
+// import Setup from "./tutorial/2-useEffect/setup/1-useEffect-basics";
+import Setup from "./tutorial/2-useEffect/setup/2-useEffect-cleanup";
+
+import Final from "./tutorial/2-useEffect/final/2-useEffect-cleanup";
 
 function App() {
   return (
     <div className="container">
       <Setup />
+      <hr />
+      <Final />
     </div>
   );
 }
