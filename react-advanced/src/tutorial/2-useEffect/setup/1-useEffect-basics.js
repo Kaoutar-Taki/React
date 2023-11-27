@@ -1,9 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+
 // by default runs after every re-render
 // cleanup function
 // second parameter
+
 const UseEffectBasics = () => {
-  return <h2>useEffect Basics</h2>;
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (count > 0) document.title = `New Messages(${count})`;
+  });
+  return (
+    <>
+      <h1>{count}</h1>
+      <button type="button" className="btn" onClick={() => setCount(count + 1)}>
+        Click Me
+      </button>
+    </>
+  );
 };
 
 export default UseEffectBasics;
