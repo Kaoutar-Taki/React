@@ -10,7 +10,7 @@ export default function Signup() {
       lastName: "",
       email: "",
     },
-    validationSchema: Yup.object({
+    validationSchema: Yup.object().shape({
       firstName: Yup.string()
         .max(15, "Must be 15 characters or less")
         .required("Required"),
@@ -68,6 +68,7 @@ export default function Signup() {
           <p>{formik.errors.email}</p>
         ) : null}
       </div>
+      <div className="input-container"></div>
       <button type="submit">Submit</button>
     </form>
   );
