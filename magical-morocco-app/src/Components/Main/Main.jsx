@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./main.css";
 import { GrLocation } from "react-icons/gr";
 import { TbClipboardCheck } from "react-icons/tb";
@@ -11,6 +11,8 @@ import merzouga from "../../assets/merzouga.jpg";
 import tangier from "../../assets/tangier.jpg";
 import agadir from "../../assets/agadir.jpg";
 import ouarzazate from "../../assets/ouarzazate.jpg";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Data = [
   {
@@ -106,28 +108,35 @@ const Data = [
 ];
 
 const Main = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <section className="main container section">
       <div className="secTitle">
-        <h3 className="title">Most visited destinations</h3>
+        <h3 data-oas="fade-right" className="title">
+          Most visited destinations
+        </h3>
       </div>
       <div className="secContent grid">
         {Data.map(
           ({ id, imgSrc, destTitle, location, grade, fees, description }) => {
             return (
-              <div key={id} className="singleDestination">
+              <div data-aos="fade-up" key={id} className="singleDestination">
                 <div className="imageDiv">
                   <img src={imgSrc} alt={destTitle} />
                 </div>
                 <div className="cardInfo">
                   <h4 className="destTitle">{destTitle}</h4>
                   <span className="continent flex">
-                    <GrLocation className="icon"/>
+                    <GrLocation className="icon" />
                     <span className="name">{location}</span>
                   </span>
                   <div className="fees flex">
                     <div className="grade">
-                      <span>{grade} <small>+1</small></span>
+                      <span>
+                        {grade} <small>+1</small>
+                      </span>
                     </div>
                     <div className="price">
                       <h5>{fees}</h5>

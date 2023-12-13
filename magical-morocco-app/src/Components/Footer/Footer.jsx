@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./footer.css";
 import v2 from "../../assets/v2.mp4";
 import { TbSend } from "react-icons/tb";
@@ -10,8 +10,13 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <section className="footer">
       <div className="videoDiv">
@@ -19,13 +24,17 @@ const Footer = () => {
       </div>
       <div className="secContent container">
         <div className="contactDiv flex">
-          <div className="text">
+          <div data-aos="fade-up" className="text">
             <small>KEEP IN TOUCH</small>
             <h2>Travel with us</h2>
           </div>
           <div className="inputDiv flex">
-            <input type="text" placeholder="Enter Email Address" />
-            <button className="btn flex" type="submit">
+            <input
+              data-aos="fade-up"
+              type="text"
+              placeholder="Enter Email Address"
+            />
+            <button data-aos="fade-up" className="btn flex" type="submit">
               SEND <TbSend className="icon" />
             </button>
           </div>
@@ -39,13 +48,13 @@ const Footer = () => {
                 Magical Morocco App.
               </a>
             </div>
-            <div className="footerParagraph">
+            <div data-aos="fade-up" className="footerParagraph">
               Explore the beauty of Morocco with Magical Morocco App. Immerse
               yourself in the rich culture, vibrant markets, and breathtaking
               landscapes. Plan your dream journey and make lasting memories in
               this enchanting destination.
             </div>
-            <div className="footerSocials flex">
+            <div data-aos="fade-up" className="footerSocials flex">
               <FaTwitter className="icon" />
               <FaYoutube className="icon" />
               <FaInstagramSquare className="icon" />
@@ -53,7 +62,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="footerLinks grid">
-            <div className="linkGroup">
+            <div
+              data-aos="fade-up"
+              data-oas-duration="4000"
+              className="linkGroup"
+            >
               <span className="groupTitle">OUR AGENCY</span>
               <li className="footerList flex">
                 <FaChevronRight className="icon" />
@@ -76,7 +89,11 @@ const Footer = () => {
                 Payment
               </li>
             </div>
-            <div className="linkGroup">
+            <div
+              data-aos="fade-up"
+              data-oas-duration="5000"
+              className="linkGroup"
+            >
               <span className="groupTitle">PARTNERS</span>
               <li className="footerList flex">
                 <FaChevronRight className="icon" />
@@ -99,7 +116,11 @@ const Footer = () => {
                 TripAdvisor
               </li>
             </div>
-            <div className="linkGroup">
+            <div
+              data-aos="fade-up"
+              data-oas-duration="6000"
+              className="linkGroup"
+            >
               <span className="groupTitle">LAST MINUTE</span>
               <li className="footerList flex">
                 <FaChevronRight className="icon" />
