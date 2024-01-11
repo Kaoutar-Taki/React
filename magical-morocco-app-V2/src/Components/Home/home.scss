@@ -1,20 +1,21 @@
 :root {
-  --PrimaryColor: hsl(199, 100%, 33%);
-  --SecondaryColor: hsl(187, 85%, 43%);
+  --PrimaryColor: hsl(29, 100%, 50%); /* Rich orange color associated with Moroccan landscapes */
+  --SecondaryColor: hsl(7, 85%, 43%); /* Deep red color reminiscent of Moroccan architecture */
   --gradientColor: linear-gradient(
     to right,
-    hsl(187, 85%, 43%),
-    hsl(199, 100%, 33%)
+    hsl(7, 85%, 43%),
+    hsl(29, 100%, 50%)
   );
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
-  --textcolor: hsl(240, 4%, 36%);
+  --textcolor: hsl(30, 10%, 20%); /* Dark brown for text */
   --whiteColorDeam: hsl(0, 0%, 93%);
-  --greyText: rgb(190, 190, 190);
-  --inputColor: rgb(239, 239, 239);
-  --bodyColor: rgb(240, 240, 246);
-  --cardBG: rgb(255, 255, 235);
+  --greyText: rgb(150, 150, 150); /* Slightly warmer grey */
+  --inputColor: rgb(220, 220, 220); /* Light grey for input fields */
+  --bodyColor: rgb(255, 255, 245); /* Off-white background color */
+  --cardBG: rgb(255, 255, 235); /* Creamy background color for cards */
 }
+
 .home {
   width: 100%;
   position: relative;
@@ -122,7 +123,7 @@
         }
 
         .input[type="range"] {
-          background: blue;
+          background: var(--SecondaryColor);
         }
       }
 
